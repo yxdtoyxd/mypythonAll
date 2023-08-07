@@ -15,6 +15,9 @@ app.register_blueprint(sub2_restful_api)
 def get_num1():
     return {'number': random.randint(100, 5000)}
 
+
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

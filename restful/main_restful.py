@@ -11,6 +11,10 @@ app = Flask(__name__)
 app.register_blueprint(sub1_restful_api)
 app.register_blueprint(sub2_restful_api)
 
+@app.route('/api/num', methods=['GET'])
+def get_num1():
+    return {'number': random.randint(100, 5000)}
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8001, debug=True)
+    app.run(host='0.0.0.0', port=8080)

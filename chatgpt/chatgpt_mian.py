@@ -1,7 +1,7 @@
 import openai
 from flask import Flask, jsonify, request
 
-openai.api_key = "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"
+openai.api_key = "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"
 openai.organization = "org-8IOzxKfMnE2zKEGGfGbDNCol"
 
 app = Flask(__name__)

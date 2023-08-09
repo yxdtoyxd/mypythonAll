@@ -19,7 +19,5 @@ def createCompletion():
     print("响应结果" + resultMsg)
     return resultMsg
 
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

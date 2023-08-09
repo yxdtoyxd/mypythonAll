@@ -19,6 +19,7 @@ def createCompletion():
     print("响应结果" + resultMsg)
     return resultMsg
 
+
 @app.route('/chatgpt/v1/embeddings', methods=['POST'])
 def createEmbeddings():
     contentData = request.get_json().get('content')

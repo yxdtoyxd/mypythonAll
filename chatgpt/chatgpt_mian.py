@@ -27,8 +27,7 @@ def createEmbeddings():
         model='text-embedding-ada-002',
         input=contentData
     )
-    resultMsg = completion['data']['embedding']
-    print("响应结果" + resultMsg)
+    resultMsg = completion.data[0].embedding
     return resultMsg
 
 

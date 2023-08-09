@@ -1,6 +1,6 @@
 ## 安装python包
-pip install flask
+pip3 install flask
 
-pip install openai
+pip3 install openai
 
-pip install openai[datalib]
+pip3 install openai[datalib]

@@ -1,35 +1,15 @@
-import openai
-from flask import Flask, jsonify, request
 
-openai.api_key = "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"
-openai.organization = "org-8IOzxKfMnE2zKEGGfGbDNCol"
+from flask import Flask
+from chatgpt_init import chatgpt_init_app
+from chatgpt_plus import chatgpt_plus_app
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
-@app.route('/chatgpt/v1/chat/completions', methods=['POST'])
-def createCompletion():
-    contentData = request.get_json().get('content')
-    completion = openai.ChatCompletion.create(
-        model='gpt-3.5-turbo',
-        # Change the prompt parameter to the messages parameter
-        messages=[{'role': 'user', 'content': contentData}],
-        temperature=0
-    )
-    resultMsg = completion['choices'][0]['message']['content']
-    print("响应结果" + resultMsg)
-    return resultMsg
+# blueprint
+app.register_blueprint(chatgpt_init_app)
+app.register_blueprint(chatgpt_plus_app)
 
-
-@app.route('/chatgpt/v1/embeddings', methods=['POST'])
-def createEmbeddings():
-    contentData = request.get_json().get('content')
-    completion = openai.Embedding.create(
-        model='text-embedding-ada-002',
-        input=contentData
-    )
-    resultMsg = completion.data[0].embedding
-    return resultMsg
-
-
+# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

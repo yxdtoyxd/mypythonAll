@@ -1,7 +1,7 @@
-import openai
-from flask import Flask, jsonify, request
+import chatgpt_base_biz
+from flask import request
 from flask import Blueprint
-from chatgpt import chatgpt_base_biz
+
 
 chatgpt_init_app = Blueprint('chatgpt_init_app', __name__)
 

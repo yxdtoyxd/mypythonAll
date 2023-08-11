@@ -1,8 +1,9 @@
 import openai
+import chatgpt_base_biz
 from flask import Flask, jsonify, request
 from flask import Blueprint
-from milvus import milvus_chatgpt
-from chatgpt import chatgpt_base_biz
+from .. milvus import milvus_chatgpt
+
 
 chatgpt_plus_app = Blueprint('chatgpt_plus_app', __name__)
 
